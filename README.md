@@ -1,40 +1,47 @@
-# csvExport
+# pageScroller
 
-Export your HTML tables to CSV format.
+Scroll smoothly & easily.
 
 ### Doc
 
 * **Installation**
 
-Simply import JQuery & csvExport into your HTML.
+Simply import JQuery & pageScroller into your HTML.
 ```
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="your/Path/js/csvExport.js" type="text/javascript"></script>	
+<script src="your/Path/js/pageScroller.js" type="text/javascript"></script>	
 ```
 * **How to use**
-Select your table(s) with a JQuery selector.
+Select your sections container with a JQuery selector.
 ```
-$('table').csvExport();
+$('#container').pageScroller();
 ```
 * **Options**
 ```
 {
-    escapeContent:true, //Escapes illegal chars
-    title:'Exported_Table', //File name
-    beforeStart : function(table) {}, //Triggers before anything is called
-    onStringReady : function(currentString) {} //Triggers when your CSV string is ready
+    travelTime:1000, //travel time
+    afterTravelTimeout:1, //length of the pause after each scroll (> 0)
+    travelEasing:'swing', //easing type
+    startingPage:0, //Index of your starting page (in your container)
+    anchors:[], //list of CSS selectors for your custom anchors
+    onTrigger : function({nextPage,prevPage}) {}, //Triggers before the scroll starts
+    onEnd : function({nextPage,prevPage}) {} //Triggers after the scroll ends
 }
 ```
 * **Example**
 ```
-$(this).next().next().csvExport({
-  title: "Table_Test",
-  beforeStart: function(t){
-    console.log(t);
-  },
-  onStringReady: function(s){
-    console.log(s);
-  }
+$('#container').pageScroller({
+    travelTime:500,
+    afterTravelTimeout:50,
+    travelEasing:'swing',
+    startingPage:0,
+    anchors:['.test1','#test2','li.test3>a'],
+    onTrigger : function(e) {
+        console.log(e);
+    },
+    onEnd : function(e) {
+        console.log(e);
+    }
 });
 ```
 
