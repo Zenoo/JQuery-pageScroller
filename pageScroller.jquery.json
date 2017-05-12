@@ -1,0 +1,35 @@
+{
+  "name": "pageScroller",
+  "title": "jQuery Smooth Scroll",
+  "description": "Scroll smoothly & easily",
+  "keywords": [
+    "jquery-plugins",
+    "scroll",
+    "fullpage",
+    "mobile"
+  ],
+  "version": "1.1.0",
+  "author": {
+    "name": "Zenoo",
+    "url": "https://github.com/Zenoo"
+  },
+  "maintainers": [
+    {
+      "name": "Zenoo",
+      "url": "https://github.com/Zenoo"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/Zenoo/JQuery-pageScroller/issues",
+  "homepage": "https://github.com/Zenoo/JQuery-pageScroller",
+  "docs": "https://github.com/Zenoo/JQuery-pageScroller#readme",
+  "download": "https://github.com/Zenoo/JQuery-pageScroller/archive/master.zip",
+  "dependencies": {
+    "jquery": ">=1.4"
+  }
+}
